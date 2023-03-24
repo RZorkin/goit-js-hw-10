@@ -52,11 +52,19 @@ function renderCountries(country) {
 
 function renderCountry(country) {
   const markup = `<div class ="main__country">
-                    <img src="${country.flags.svg}" alt="${country.name.common} width="50" height="50">
+                    <img src="${country.flags.svg}" alt="${
+    country.name.common
+  } width="50" height="50">
                     <p class="countryName">${country.name.common}</p>
                   </div>
-                  <p><span style="font-weight:bold;">Capital:  </span>${country.capital}</p>
-                  <p><span style="font-weight:bold;">Population:  </span>${country.population}</p>
-                  <p><span style="font-weight:bold;">Languages:  </span>${country.languages}</p>`;
+                  <p><span style="font-weight:bold;">Capital:  </span>${
+                    country.capital
+                  }</p>
+                  <p><span style="font-weight:bold;">Population:  </span>${
+                    country.population
+                  }</p>
+                  <p><span style="font-weight:bold;">Languages:  </span>${Object.values(
+                    country.languages
+                  ).join(', ')}</p>`;
   ref.info.innerHTML = markup;
 }
